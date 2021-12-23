@@ -28,7 +28,7 @@ public struct CacheProvider<Provider: MoyaProviderType> where Provider.Target: C
                 case let .success(response):
                     single(.success(response))
                 case let .failure(error):
-                    single(.error(error))
+                    single(.failure(error))
                 }
             }
             
