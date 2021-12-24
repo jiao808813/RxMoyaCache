@@ -12,7 +12,7 @@ import Moya
 extension PrimitiveSequence where Trait == SingleTrait, Element == Moya.Response {
     
     public func storeCachedResponse<Target>(for target: Target)
-        -> Single<ElementType>
+        -> Single<Element>
         where Target: TargetType, Target: Cacheable {
         return map { response -> Element in
             if target.allowsStorage(response) {
